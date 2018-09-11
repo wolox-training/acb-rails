@@ -18,7 +18,3 @@ test:
 
 production:
   <<: *default
-  database: nombre-de-tu-app_production
-  username: nombre-de-tu-app
-  password: <%= ENV['TRAINING-APP_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
