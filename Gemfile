@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg', '~> 1.1.3'
 gem 'rubocop', '~> 0.59.0'
 gem 'rspec', '~> 3.8.0'
+gem 'devise', '~> 4.4.3'
