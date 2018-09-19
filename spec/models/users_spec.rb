@@ -1,6 +1,6 @@
 require 'rails_helper'
 describe User, type: :model do
-  let (:user) {create(:user)}
+  let(:user) { create(:user) }
   it 'has a first name' do
     is_expected.to validate_presence_of(:first_name)
   end
@@ -10,7 +10,7 @@ describe User, type: :model do
   describe '#create' do
     context 'When the first_name is nil' do
       let(:first_name) { nil }
-      it 'sets the user status'  do
+      it 'sets the user status' do
         is_expected.to be_invalid
       end
     end
