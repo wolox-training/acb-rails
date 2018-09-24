@@ -47,6 +47,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8.0'
   gem 'shoulda', '~> 3.6.0'
   gem 'shoulda-matchers', '~> 3.1.2'
+  gem 'versionist', '~> 1.7.0'
+  gem 'active_model_serializers', '~> 0.10.7'
+  gem 'wor-paginate', '~> 0.1.4'
 end
 
 group :development do
