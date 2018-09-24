@@ -39,6 +39,14 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'database_cleaner', '~> 1.7.0'
+  gem 'faker', '~> 1.9.1', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+  #gem 'factory_bot'
+  gem 'rspec', '~> 3.8.0'
+  gem 'factory_bot_rails', '~> 4.11.1'
+  gem 'rspec-rails', '~> 3.8.0'
+  gem 'shoulda', '~> 3.6.0'
+  gem 'shoulda-matchers', '~> 3.1.2'
 end
 
 group :development do
@@ -54,7 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg', '~> 1.1.3'
 gem 'rubocop', '~> 0.59.0'
-gem 'rspec', '~> 3.8.0'
 gem 'devise', '~> 4.4.3'
 gem 'devise_token_auth', '~> 0.2.0'
 gem 'omniauth', '~> 1.8.1'
