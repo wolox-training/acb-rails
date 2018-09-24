@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'wor-paginate', '~> 0.1.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,7 +50,6 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1.2'
   gem 'versionist', '~> 1.7.0'
   gem 'active_model_serializers', '~> 0.10.7'
-  gem 'wor-paginate', '~> 0.1.4'
 end
 
 group :development do
