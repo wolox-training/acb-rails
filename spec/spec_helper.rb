@@ -1,5 +1,5 @@
-#require 'factory_bot'
-#require 'shoulda/matchers'
+# require 'factory_bot'
+# require 'shoulda/matchers'
 # specs live under a `spec` directory, which RSpec adds to the `$LOAD_PATH`.
 # The generated `.rspec` file contains `--require spec_helper` which will cause
 # this file to always be loaded, without a need to explicitly require it in any
