@@ -1,7 +1,7 @@
 class CreateBooks < ActiveRecord::Migration[5.1]
   def change
     create_table :books do |t|
-       t.string   :gender        , null: false, default: ""
+       t.string   :gender       , null: false, default: ""
        t.string   :author       , null: false, default: ""
        t.string   :image
        t.string   :title        , null: false, default: ""
