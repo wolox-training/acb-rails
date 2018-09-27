@@ -1,12 +1,12 @@
 require 'rails_helper'
-require './authenticated_user.rb'
+require 'support/shared_contexts/authenticated_user.rb'
 describe Api::V1::BooksController, type: :controller do
   include_context 'Authenticated User'
   describe 'GET #index' do
     context 'When fetching all the books' do
-      let!(:books) { create_list(:book) }
+      let!(:books) { create_list(:book,3) }
       before do
-        get :index, params: { id: book.id }
+        get :index
       end
       it 'responses with the books json' do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
@@ -19,13 +19,11 @@ describe Api::V1::BooksController, type: :controller do
       end
     end
   end
-end
-describe Api::V1::BooksController, type: :controller do
   describe 'GET #show' do
     context 'When fetching a book' do
       let!(:book) { create(:book) }
       before do
-        get :show, params: { book_id: book.id }
+        get :show, params: { id:book.id }
       end
       it 'responses with the book json' do
         expect(response_body.to_json).to eq BookSerializer.new(
