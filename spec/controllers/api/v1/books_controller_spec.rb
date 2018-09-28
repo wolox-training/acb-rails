@@ -12,7 +12,7 @@ describe Api::V1::BooksController, type: :controller do
         expected = ActiveModel::Serializer::CollectionSerializer.new(
           books, each_serializer: BookSerializer
         ).to_json
-        expect(response_body.to_json) =~ JSON.parse(expected)
+       expect(response_body['page'].as_json).to eq JSON.parse(expected)
       end
       it 'responds with 200 status' do
         expect(response).to have_http_status(:ok)
