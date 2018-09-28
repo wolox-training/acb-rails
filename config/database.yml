@@ -33,4 +33,7 @@ production:
   #host: localhost
   #username: wbooks-api
   #password: wbooks-api
+  database: d2lu3h8jlqer1j
+  username: hxswgjwwbctogr
+  password: 20a9e74fb4ee9df660b869de34ec0cebe93190ea9335ed556f832a6c26e504ee
   url: postgres://hxswgjwwbctogr:20a9e74fb4ee9df660b869de34ec0cebe93190ea9335ed556f832a6c26e504ee@ec2-174-129-18-98.compute-1.amazonaws.com:5432/d2lu3h8jlqer1j
