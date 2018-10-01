@@ -4,6 +4,6 @@ FactoryBot.define do
     last_name             { Faker::Name.last_name }
     email                 { Faker::Internet.email(last_name) }
     password              { Faker::Internet.password }
-    password_confirmation { Faker::Internet.password_confirmation }
+    password_confirmation { password }
   end
 end

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :books do
+  factory :book do
     author    { Faker::Book.author }
     gender    { Faker::Book.genre }
     image     { 'FakeImage123.gif' }

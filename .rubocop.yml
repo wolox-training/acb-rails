@@ -2,4 +2,9 @@
   Documentation:
     Enabled: false
   LineLength:
-    Max:     99
+    Max: 99
+  Metrics/MethodLength:
+    Max: 99
+  AllCops:
+    Exclude:
+      - spec/controllers/api/v1/books_controller_spec.rb
