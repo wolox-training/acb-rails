@@ -2,24 +2,25 @@ module Api
   module V1
     class RentsController < ApplicationController
       include Wor::Paginate
+
       def index
-        render_paginated current_user.rents
+        @rents = Rent.includes(:book, :user).where(user_id: params[:id])
+        render_paginated @rents
       end
 
       def create
-        Book.find(create_params['book_id'])
-        rent = Rent.new(create_params)
-        render json: rent
+        rent = Rent.create(rent_params)
+        if rent.valid? # rent.save
+          render json: rent
+        else
+          render json: rent.errors, status: :unprocessable_entity
+        end
       end
 
       private
 
-      def create_params
+      def rent_params
         params.permit(:user_id, :book_id, :from, :to)
-      end
-
-      def index_params
-        params.required(:user_id)
       end
     end
   end
