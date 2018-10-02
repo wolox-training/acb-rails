@@ -41,7 +41,6 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.7.0'
   gem 'faker', '~> 1.9.1', git: 'https://github.com/stympy/faker.git', branch: 'master'
   gem 'selenium-webdriver'
-  # gem 'factory_bot'
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'rspec', '~> 3.8.0'
   gem 'rspec-rails', '~> 3.8.0'
