@@ -49,6 +49,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1.2'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'dotenv-rails', groups: [:development, :test]
 end
 
 group :development do
