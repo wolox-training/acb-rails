@@ -1,7 +1,7 @@
 class EmailWorker
   include Sidekiq::Worker
 
-  def perform(*_args)
+  def perform(rent_id)
     rent = Rent.find(rent_id)
     UserMailer.welcome_email(rent).deliver
   end
