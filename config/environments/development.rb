@@ -60,6 +60,6 @@ Rails.application.configure do
     :address => Rails.application.secrets.address,
     :domain => Rails.application.secrets.domain,
     :port => Rails.application.secrets.port,
-    :authentication => Rails.application.secrets.authentication.to_sym
+    :authentication => Rails.application.secrets.authentication
   }
 end
