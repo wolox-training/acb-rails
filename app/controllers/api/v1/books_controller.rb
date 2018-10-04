@@ -10,7 +10,7 @@ module Api
 
       def show
         @book = Book.find(params[:id])
-        render json: @book
+        render_paginated json: @book
       end
     end
   end

@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
   def welcome_email(rent)
     @rent = rent
     @book = rent.book
-    mail(to: rent.user.email, default_i18n_subject(subject: 'Welcome to my kickoff proyect ')) do |format|
+    mail(to: rent.user.email, subject: I18n.t('mails.welcome.subject')) do |format|
       format.html { render 'welcome_email' }
     end
   end

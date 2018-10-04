@@ -7,7 +7,7 @@ default: &default
   username: <%= ENV["DEFAULT_USERNAME"] %>
   password: <%= ENV["DEFAULT_PASSWORD"] %>
 
-development:
+development: &development
   <<: *default
 
 test:
