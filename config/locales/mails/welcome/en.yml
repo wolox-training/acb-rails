@@ -1,8 +1,4 @@
 en:
    mails:
     welcome:
-      subject: "en - Welcome to my kickoff project"
-es:
-   mails:
-    welcome:
-      subject: "es - Welcome to my kickoff project"
+      subject: "Welcome to my Ruby on Rails project"

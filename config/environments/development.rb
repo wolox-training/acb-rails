@@ -54,12 +54,13 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    :user_name => Rails.application.secrets.username,
-    :password => Rails.application.secrets.password,
-    :address => Rails.application.secrets.address,
-    :domain => Rails.application.secrets.domain,
-    :port => Rails.application.secrets.port,
-    :authentication => Rails.application.secrets.authentication
+    user_name: Rails.application.secrets.username,
+    password: Rails.application.secrets.password,
+    address: Rails.application.secrets.address,
+    domain: Rails.application.secrets.domain,
+    port: Rails.application.secrets.port,
+    authentication: Rails.application.secrets.authentication.to_sym
   }
 end
