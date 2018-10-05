@@ -14,6 +14,6 @@ module AcbRails
     config.i18n.load_path += Dir[File.join(::Rails.root, 'config', 'locales', '**', '*.{rb,yml}')]
     # Use I18n fallbacks
     config.i18n.fallbacks = true
-    I18n.locale = :es
+    I18n.locale = :en
   end
 end
