@@ -2,11 +2,3 @@ en:
    mails:
     welcome:
       subject: "Welcome to my Ruby on Rails project"
-      gender:"Genero"
-      author:"Autor"
-      publisher:"Editorial"
-      year:"Año"
-      title:"Titulo"
-      image:"Imagen"
-      initial_date:"Fecha inicial"
-      end_date:"Fecha final"
