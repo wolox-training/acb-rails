@@ -79,6 +79,8 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+  config.action_mailer.delivery_method = :smtp  # liena nueva
+  config.action_mailer.perform_deliveries = false # liena nueva
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
@@ -88,4 +90,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.smtp_settings = {
+    user_name: Rails.application.secrets.username,
+    password: Rails.application.secrets.password,
+    address: Rails.application.secrets.address,
+    domain: Rails.application.secrets.domain,
+    port: Rails.application.secrets.port,
+    authentication: Rails.application.secrets.authentication.to_sym
+  }
+
 end
