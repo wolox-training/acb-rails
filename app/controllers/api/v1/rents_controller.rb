@@ -12,7 +12,8 @@ module Api
         @rent = Rent.new(rent_params)
         if @rent.save
           render json: @rent, status: :created
-          EmailWorker.perform_async(@rent.id)
+          #EmailWorker.perform_async(@rent.id)
+          EmailWorker.perform(@rent.id)
         else
           render json: @rent.errors, status: :unprocessable_entity
         end
