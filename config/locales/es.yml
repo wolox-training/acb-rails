@@ -1,0 +1,16 @@
+es:
+  user_mailer:
+    welcome_email:
+      email:
+        Created At: "Creado en"
+        bye: "Bye"
+      book:
+        details: "Detalles"
+        gender: "Genero"
+        author: "Autor"
+        publisher: "Editorial"
+        year: "Año"
+        title: "Titulo"
+        image: "Imagen"
+        initial_date: "Fecha inicial"
+        end_date: "Fecha final"

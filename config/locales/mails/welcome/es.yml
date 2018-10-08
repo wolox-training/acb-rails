@@ -2,14 +2,3 @@ es:
    mails:
     welcome:
       subject: "Bienvenido a mi proyecto de Ruby on Rails"
-    user_mailer:
-      welcome_email:
-        book:
-          gender: "Genero"
-          author: "Autor"
-          publisher: "Editorial"
-          year: "Año"
-          title: "Titulo"
-          image: "Imagen"
-          initial_date: "Fecha inicial"
-          end_date: "Fecha final"
