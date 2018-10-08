@@ -6,18 +6,18 @@
   <body>
     <h1><%= "Ruby on Rails Training"%></h1>
     <p>
-    <b><%= t I18n.t('.email.created_at') %> </b> <%= @rent.created_at %><br>
-      <b><%= t I18n.t('.book.details') %> </b>
+    <b><%= t '.email.created_at' %> </b> <%= @rent.created_at %><br>
+      <b><%= t '.book.details' %> </b>
       <br>
-          <b><%= t  I18n.t('.book.gender') %> </b><%= @book.gender %><br>
-          <b><%= t I18n.t('.book.author') %> </b><%= @book.author %><br>
-          <b><%= t I18n.t('.book.publisher') %> </b><%= @book.publisher %><br>
-          <b><%= t I18n.t('.book.year') %> </b><%= @book.release_date %><br>
-          <b><%= t I18n.t('.book.title') %> </b><%= @book.title %><br>
-          <b><%= t I18n.t('.book.image') %> </b><%= @book.image %><br>
-      <b><%= t I18n.t('.email.initial_date') %> </b> <%= @rent.from %><br>
-      <b><%= t I18n.t('.email.end_date') %> </b> <%= @rent.to %><br>
+          <b><%= t '.book.gender' %> </b><%= @book.gender %><br>
+          <b><%= t '.book.author' %> </b><%= @book.author %><br>
+          <b><%= t '.book.publisher' %> </b><%= @book.publisher %><br>
+          <b><%= t '.book.year'  %> </b><%= @book.release_date %><br>
+          <b><%= t '.book.title' %> </b><%= @book.title %><br>
+          <b><%= t '.book.image' %> </b><%= @book.image %><br>
+      <b><%= t '.email.initial_date' %> </b> <%= @rent.from %><br>
+      <b><%= t '.email.end_date' %> </b> <%= @rent.to %><br>
     </p>
-    <p><%= t I18n.t('.email.bye') %></p>
+    <p><%= t '.email.bye' %></p>
   </body>
 </html>
