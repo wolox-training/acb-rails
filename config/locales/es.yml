@@ -4,6 +4,9 @@ es:
       email:
         Created At: "Creado en"
         bye: "Bye"
+        end_date: "Fecha final"
+        initial_date: "Fecha inicial"
+        created_at: "Creado en"
       book:
         details: "Detalles"
         gender: "Genero"
