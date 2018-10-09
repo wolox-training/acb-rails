@@ -30,7 +30,7 @@ module Api
       end
 
       def pundit_not_authorized_error
-        render json: { errors: I18n.t('errores.pundit.notallow')}, status: :unauthorized
+        render json: { errors: I18n.t('errores.pundit.notallow') }, status: :unauthorized
       end
     end
   end
