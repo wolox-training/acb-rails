@@ -1,5 +1,4 @@
 class RentPolicy < ApplicationPolicy
-
   class Scope < Scope
     def resolve
       if user.admin?
