@@ -36,6 +36,7 @@ gem 'sidekiq', '~> 5.2.2'
 gem 'rails-i18n', '~> 5.1.1'
 gem 'redis-namespace'
 gem 'activeadmin', github: 'activeadmin'
+gem 'pundit','~> 2.0.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
