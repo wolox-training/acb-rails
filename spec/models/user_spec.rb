@@ -1,4 +1,3 @@
-
 describe User, type: :model do
   let(:user) { create(:user) }
   it 'has a first name' do
