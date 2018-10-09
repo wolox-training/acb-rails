@@ -1,0 +1,4 @@
+en:
+  errores:
+    pundit:
+      notallow: "You're not authorized to do this action"
