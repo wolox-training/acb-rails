@@ -5,16 +5,13 @@ module Api
       include Wor::Paginate
 
       def index
-        @rents = Rent.includes(:book, :user).where(user_id: params[:id])
-        @user  = User.find(params[:user_id])
-        authorize(@user)
-        render_paginated @rents
+        render_paginate @rents = policy_scope(Rent)
       end
 
       def create
         @rent = Rent.new(rent_params)
-        @user = User.find(params[:user_id])
-        authorize(@user)
+        @user = current_user
+        authorize(@rent)
         if @rent.save
           render json: @rent, status: :created
           EmailWorker.perform_async(@rent.id)
