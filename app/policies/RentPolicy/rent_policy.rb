@@ -1,5 +1,5 @@
 class RentPolicy < ApplicationPolicy
-  class Scope < Scope
+  class Scope < RentPolicy
     def resolve
       if user.admin?
         scope.all
@@ -23,5 +23,9 @@ class RentPolicy < ApplicationPolicy
 
   def destroy?
     user.id == record.user.id
+  end
+
+  def admin?
+    false
   end
 end
