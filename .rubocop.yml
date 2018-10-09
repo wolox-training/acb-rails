@@ -7,4 +7,5 @@
     Max: 99
   AllCops:
     Exclude:
-      - spec/controllers/api/v1/books_controller_spec.rb
+      - 'spec/**/*.rb'
+      - 'app/admin/*.rb'
