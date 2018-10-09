@@ -12,6 +12,10 @@ module AcbRails
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     # Use I18n fallbacks
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Flash
+
     config.i18n.fallbacks = true
     config.i18n.available_locales = %w(en es)
     I18n.locale = :en
