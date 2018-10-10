@@ -2,7 +2,7 @@ class CreateBookSuggestions < ActiveRecord::Migration[5.1]
   def change
     create_table :book_suggestions do |t|
       t.string :synopsis
-      t.float :price
+      t.float  :price
       t.string :author, null: false
       t.string :title, null: false
       t.string :link, null: false
@@ -11,7 +11,7 @@ class CreateBookSuggestions < ActiveRecord::Migration[5.1]
       t.references :user, index: true
 
       t.timestamps
-      
+
     end
   end
 end
