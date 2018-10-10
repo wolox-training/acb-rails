@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RentPolicy < ApplicationPolicy
   class Scope < RentPolicy
     def resolve
