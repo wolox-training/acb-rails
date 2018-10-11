@@ -7,7 +7,6 @@ describe Api::V1::BookSuggestionsController, type: :controller do
       let(:user) { create(:user)}
       let!(:book_suggestion_attributes) { attributes_for(:book_suggestion)}
       before do
-        request.headers.merge! user.create_new_auth_token
         post :create, params: { book_suggestion: book_suggestion_attributes }
       end
       it 'creates a new book suggestion' do
@@ -19,7 +18,17 @@ describe Api::V1::BookSuggestionsController, type: :controller do
       end
     end
   end
-
-
-  
+  context 'creates a new book with nil title ' do
+   let!(:book_suggestion_attributes) { attributes_for(:book_suggestion, title: nil) }
+   before do
+     post :create, params: { book_suggestion: book_suggestion_attributes }
+   end
+   it 'doesnt create a new book suggestion' do
+     request = JSON.parse(response.body)
+     expect (request['title']).to eq nil
+   end
+   it 'responds with 422 status' do
+     expect(response).to have_http_status(:unprocessable_entity)
+   end
+ end
 end

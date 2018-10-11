@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe Rent, type: :model do
+describe Rent do
   let(:rents) { create(:rent) }
   it 'has a initial date' do
     is_expected.to validate_presence_of(:from)

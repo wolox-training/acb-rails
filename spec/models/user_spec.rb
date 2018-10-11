@@ -1,4 +1,4 @@
-describe User, type: :model do
+describe User do
   let(:user) { create(:user) }
   it 'has a first name' do
     is_expected.to validate_presence_of(:first_name)

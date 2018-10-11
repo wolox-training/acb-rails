@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe BookSuggestion, type: :model do
+describe BookSuggestion do
   let(:book_suggestion) { create(:book_suggestion) }
 
   it 'has a title' do

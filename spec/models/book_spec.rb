@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe Book, type: :model do
+describe Book do
   let(:books) { create(:book) }
   it 'has a gender' do
     is_expected.to validate_presence_of(:gender)
