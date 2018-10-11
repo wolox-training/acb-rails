@@ -15,7 +15,7 @@ module Api
       end
 
       include DeviseTokenAuth::Concerns::SetUserByToken
-    #  protect_from_forgery with: :null_session
+      #  protect_from_forgery with: :null_session
       protect_from_forgery with: :exception
       before_action :configure_permitted_parameters, if: :devise_controller?
 

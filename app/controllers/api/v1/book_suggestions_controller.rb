@@ -6,8 +6,9 @@ module Api
       skip_before_action :authenticate_user!, only: [:create]
 
       def create
-        @book_suggestion = BookSuggestion.new(book_suggestion_params.merge(user_id: current_user&.id))
-        
+        @book_suggestion = BookSuggestion.new(book_suggestion_params
+          .merge(user_id: current_user&.id))
+
         if @book_suggestion.save
           render json: @book_suggestion, status: :created
         else
