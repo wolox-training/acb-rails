@@ -25,7 +25,7 @@ describe Api::V1::BookSuggestionsController, type: :controller do
    end
    it 'doesnt create a new book suggestion' do
      request = JSON.parse(response.body)
-     expect (request['title']).to eq nil
+     expect(request['title']).to eq nil
    end
    it 'responds with 422 status' do
      expect(response).to have_http_status(:unprocessable_entity)
