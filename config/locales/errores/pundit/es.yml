@@ -1,0 +1,4 @@
+es:
+  errores:
+    pundit:
+      notallow: "Usted no esta autorizado para realizar esta acción"
