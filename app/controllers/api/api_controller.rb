@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module Api
-  module V1
     class ApiController < ApplicationController
       include DeviseTokenAuth::Concerns::SetUserByToken
       include Wor::Paginate
@@ -28,5 +27,4 @@ module Api
         devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
       end
     end
-  end
 end
