@@ -1,35 +1,40 @@
+# frozen_string_literal: true
+
 module Users
   class OmniauthController < ApplicationController
-      # rubocop:disable AbcSize
-      def google_oauth2
-        user = User.from_omniauth(request.env['omniauth.auth'])
-        if user.persisted?
-          flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
-          sign_in_and_redirect user, event: :authentication
-        else
-          session['devise.google_data'] = request.env['omniauth.auth'].except(:extra)
-          redirect_to new_user_registration_url, alert: user.errors.full_messages.join("\n")
-        end
+    # rubocop:disable AbcSize
+    def google_oauth2
+      user = User.from_omniauth(request.env['omniauth.auth'])
+      if user.persisted?
+        flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
+        sign_in_and_redirect user, event: :authentication
+      else
+        session['devise.google_data'] = request.env['omniauth.auth'].except(:extra)
+        redirect_to new_user_registration_url, alert: user.errors.full_messages.join("\n")
       end
-      def passthru
-        render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+    end
+
+    def passthru
+      render file: "#{Rails.root}/public/404.html", status: 404, layout: false
+    end
+
+    def after_sign_in_path_for(resource)
+      if resource.email_verified?
+        super resource
+      else
+        finish_signup_path(resource)
       end
-      def after_sign_in_path_for(resource)
-        if resource.email_verified?
-          super resource
-        else
-          finish_signup_path(resource)
-        end
-      end
-      def redirect_callbacks
-        devise_mapping = [request.env['omniauth.params']['namespace_name'],
-                          request.env['omniauth.params']['resource_class'].underscore.gsub('/', '_')].compact.join('_')
-        path = "#{Devise.mappings[devise_mapping.to_sym].fullpath}/#{params[:provider]}/callback"
-        klass = request.scheme == 'https' ? URI::HTTPS : URI::HTTP
-        redirect_route = klass.build(host: request.host, port: request.port, path: path).to_s
-        session['dta.omniauth.auth'] = request.env['omniauth.auth'].except('extra')
-        session['dta.omniauth.params'] = request.env['omniauth.params']
-        redirect_to redirect_route
-      end
+    end
+
+    def redirect_callbacks
+      devise_mapping = [request.env['omniauth.params']['namespace_name'],
+                        request.env['omniauth.params']['resource_class'].underscore.tr('/', '_')].compact.join('_')
+      path = "#{Devise.mappings[devise_mapping.to_sym].fullpath}/#{params[:provider]}/callback"
+      klass = request.scheme == 'https' ? URI::HTTPS : URI::HTTP
+      redirect_route = klass.build(host: request.host, port: request.port, path: path).to_s
+      session['dta.omniauth.auth'] = request.env['omniauth.auth'].except('extra')
+      session['dta.omniauth.params'] = request.env['omniauth.params']
+      redirect_to redirect_route
+    end
   end
 end
