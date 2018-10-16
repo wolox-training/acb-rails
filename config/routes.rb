@@ -1,18 +1,24 @@
 Rails.application.routes.draw do
 
-  get 'login', to: redirect('/auth/google_oauth2'), as: 'login'
+  match 'login', to: redirect('/auth/google_oauth2'), as: 'login' , via: [:get, :post]
+  match 'auth/:provider/callback', to: 'sessions#create' , via: [:get, :post]
   get 'signout', to: 'sessions#destroy', as: 'signout'
-  get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
+
+=begin
+  post 'login', to: redirect('/auth/google_oauth2'), as: 'login'
+  post 'signout', to: 'sessions#destroy', as: 'signout'
+  post 'auth/:provider/callback', to: 'sessions#create'
+  post 'auth/failure', to: redirect('/')
+=end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   #devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
-  mount_devise_token_auth_for 'User', at: 'auth'
+  mount_devise_token_auth_for 'User', at: 'auth',:controllers => { :omniauth_callbacks => 'omniauth' }, via: [:get, :post]
+  #mount_devise_token_auth_for 'User', at: 'auth'
   # TODO
   #mount_devise_token_auth_for 'User', at: 'users/sessions'
-
   api_version(module: 'Api::V1', path: { value: 'api/v1' }) do
     resources :books, only: [:index, :show]
     resources :rents, only: [:create, :index]
