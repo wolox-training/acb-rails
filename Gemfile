@@ -37,6 +37,7 @@ gem 'rails-i18n', '~> 5.1.1'
 gem 'redis-namespace'
 gem 'activeadmin', github: 'activeadmin'
 gem 'pundit','~> 2.0.0'
+gem 'httparty'
 
 
 group :development, :test do
