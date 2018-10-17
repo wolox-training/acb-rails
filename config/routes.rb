@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     resources :books, only: [:index, :show]
     resources :rents, only: [:create, :index]
     resources :book_suggestions, only: [:create]
-    resources :open_library_controller, only[:show]
+    resources :open_library_controller, only:[:show]
   end
 end
