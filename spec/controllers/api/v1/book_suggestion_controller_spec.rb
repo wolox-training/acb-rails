@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'support/shared_contexts/authenticated_user.rb'
 describe Api::V1::BookSuggestionsController, type: :controller do
-  byebug
   include_context 'Authenticated User'
   describe 'POST #create' do
     context 'When creating a valid book suggestion' do

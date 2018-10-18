@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'support/shared_contexts/authenticated_user.rb'
 describe Api::V1::BooksController, type: :controller do
   include_context 'Authenticated User'
-  include Devise::Test::ControllerHelpers
   
   describe 'GET #index' do
     context 'When fetching all the books' do
