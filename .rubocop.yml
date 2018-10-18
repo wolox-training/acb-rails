@@ -9,5 +9,4 @@
     TargetRubyVersion: 2.5
     Exclude:
       - 'spec/**/*.rb'
-      - 'app/admin/*.rb'
-      - 'app/controllers/users/omniauth_controller.rb'    
+      - 'app/admin/*.rb' 

@@ -38,4 +38,5 @@ module Users
       redirect_to redirect_route
     end
   end
+  # rubocop:enable AbcSize
 end
