@@ -40,3 +40,4 @@ module Users
   end
   # rubocop:enable AbcSize
 end
+# rubocop:enable AbcSize
