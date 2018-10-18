@@ -15,7 +15,7 @@ module Users
     end
 
     def passthru
-      render file: "#{Rails.root}/public/404.html", status: 404, layout: false
+      render file: Rails.root.join('public', '404.html'), status: :not_found, layout: false
     end
 
     def after_sign_in_path_for(resource)
