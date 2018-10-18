@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: 'test.localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
@@ -13,7 +13,6 @@ Rails.application.configure do
   # preloads Rails for running tests, you may have to set it to true.
   config.eager_load = false
   config.action_mailer.perform_deliveries = false
-
 
 
   # Configure public file server for tests with Cache-Control for performance.
