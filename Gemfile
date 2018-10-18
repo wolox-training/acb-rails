@@ -37,6 +37,7 @@ gem 'rails-i18n', '~> 5.1.1'
 gem 'redis-namespace'
 gem 'activeadmin', github: 'activeadmin'
 gem 'pundit','~> 2.0.0'
+gem 'httparty'
 
 
 group :development, :test do
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.11.1'
   gem 'rspec', '~> 3.8.0'
   gem 'rspec-rails', '~> 3.8.0'
+  gem 'solargraph'
   gem 'shoulda', '~> 3.6.0'
   gem 'shoulda-matchers', '~> 3.1.2'
   # Use sqlite3 as the database for Active Record

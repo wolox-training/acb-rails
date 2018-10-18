@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
+# rubocop:disable AbcSize
 module Users
   class OmniauthController < ApplicationController
-    # rubocop:disable AbcSize
     def google_oauth2
       user = User.from_omniauth(request.env['omniauth.auth'])
       if user.persisted?
