@@ -27,8 +27,9 @@ module Users
     end
 
     def redirect_callbacks
-      devise_mapping = [request.env['omniauth.params']['namespace_name'],
-                        request.env['omniauth.params']['resource_class'].underscore.tr('/', '_')].compact.join('_')
+      paramsnamespace = request.env['omniauth.params']['namespace_name']
+      paramsresource  = request.env['omniauth.params']['resource_class']
+      devise_mapping = [paramsnamespace, paramsresource.underscore.tr('/', '_')].compact.join('_')
       path = "#{Devise.mappings[devise_mapping.to_sym].fullpath}/#{params[:provider]}/callback"
       klass = request.scheme == 'https' ? URI::HTTPS : URI::HTTP
       redirect_route = klass.build(host: request.host, port: request.port, path: path).to_s
