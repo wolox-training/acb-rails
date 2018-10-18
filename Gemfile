@@ -38,6 +38,7 @@ gem 'redis-namespace'
 gem 'activeadmin', github: 'activeadmin'
 gem 'pundit','~> 2.0.0'
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -71,7 +72,7 @@ gem 'devise_token_auth', '~> 0.2.0'
 gem 'omniauth', '~> 1.8.1'
 gem 'omniauth-facebook', '~> 5.0.0'
 gem 'omniauth-github', '~> 1.3.0'
-gem 'omniauth-google-oauth2', '~> 0.5.3'
+gem 'omniauth-google-oauth2'
 gem 'pg', '~> 1.1.3'
 gem 'rubocop', '~> 0.59.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

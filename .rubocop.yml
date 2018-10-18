@@ -9,4 +9,4 @@
     TargetRubyVersion: 2.5
     Exclude:
       - 'spec/**/*.rb'
-      - 'app/admin/*.rb'
+      - 'app/admin/*.rb' 
